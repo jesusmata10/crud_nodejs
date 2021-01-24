@@ -20,7 +20,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
@@ -67,7 +67,7 @@
 					<td><%= user.user%></td>
 					<td><%= user.rol%></td>
 					<td>
-						<a href="/edit" class="btn btn-outline-info"><box-icon name='pencil'></box-icon></a>
+						<a href="/edit/<%= user.id%>" class="btn btn-outline-info"><box-icon name='pencil'></box-icon></a>
 						<a href="/delete" class="btn btn-outline-danger"><box-icon name='trash'></box-icon></a>
 					</td>
 				</tr>
