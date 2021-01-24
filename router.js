@@ -5,15 +5,20 @@ const conexion = require('./database/db');
 
 router.get('/', (req, res)=>{
 
-	res.render('index');
-	/*conexion.query('SELECT * FROM users', (error, results) => {
+	conexion.query('SELECT * FROM users', (error, results) => {
 	  if (error){
 	  	throw error;
 	  }else{
-	  	res.send(results);
+	  	res.render('index',{results:results});
 	  }
 
-	});*/
-});
+	})
+})
+
+router.get('/create', (req, res)=> {
+	res.render('create');
+})
+
+const crud = require('./controllers/crud');
 
 module.exports = router
