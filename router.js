@@ -31,6 +31,20 @@ router.get('/edit/:id', (req, res)=> {
 	})
 })
 
+router.get('/delete/:id', (req, res) =>{
+	const id = req.params.id;
+	console.log('ID a eliminar:'+" "+id);
+	conexion.query('DELETE FROM users WHERE id = ?', [id], (error, results) =>{
+		if (error){
+  			throw error;
+	  	}else{
+	  		const msj = "Se ha eliminado correctamente el Usuario";
+	  		res.redirect('/');
+	  		
+	  	}
+	})
+})
+
 router.get('/configuracion', (req, res) =>{
 	res.render('configuracion');
 })
